@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: cellular_automata
+Version: 0.1
+Summary: Python library which create cellular automata
+Author: Serepas Filippas aka spartakos87
+Author-email: serepasf@gmail.com
+Requires-Python: >3.5
+Requires-Dist: numpy
+Requires-Dist: matplotlib
+Dynamic: author
+Dynamic: author-email
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary

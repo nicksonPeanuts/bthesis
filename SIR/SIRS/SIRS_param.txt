@@ -1,0 +1,4 @@
+50, sir_curve, sir, 0.01, 0.025, 100, 500
+
+# Lattice Size, Desired Plot, Initial Conditions, p2 (I --> R),
+# Prob Step, Equilibrium Sweeps, Sweeps

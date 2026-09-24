@@ -1,0 +1,14 @@
+README.md
+setup.py
+cellular_automata/__init__.py
+cellular_automata/cellular_automata.py
+cellular_automata/generationscreators.py
+cellular_automata/gifcreator.py
+cellular_automata/moviecreator.py
+cellular_automata/rules.py
+cellular_automata/rules2d.py
+cellular_automata.egg-info/PKG-INFO
+cellular_automata.egg-info/SOURCES.txt
+cellular_automata.egg-info/dependency_links.txt
+cellular_automata.egg-info/requires.txt
+cellular_automata.egg-info/top_level.txt
