@@ -12,7 +12,7 @@ from cellular_automata.moviecreator import MovieCreator
 
 class CellularAutomata:
     def __init__(self, width=10, height=10, input_array='', generations=10, save_image=False,
-                 save_data=False, save_movie=False, filename=''):
+                 save_data=False, save_movie=False, filename='', given_rule = "Moore"):
         self.width = width
         self.height = height
         # self.random_array = random_array
@@ -24,13 +24,27 @@ class CellularAutomata:
         self.save_movie = save_movie
         self.filename = filename
         self.universe = ''
+        """
+        TODO: implement a way for choosing neighboords rule, it has to be called from outside when generating the automa
+        """
+        #self.rule = given_rule
+
+        # CHOSING THE DICTIONARY
+        if given_rule == 'Moore':
+            self.given_rule = rules_2d_dict_M
+        elif given_rule == "VN":
+            self.given_rule = rules_2d_dict_VN
+        elif given_rule == "H":
+            self.given_rule = rules_2d_dict_HEX
+        else:
+            self.given_rule = rules_2d_dict_M
 
     def game_of_life(self):
         """
         Call the game of life rule
         :return:
         """
-        self._create_new_universe(rules_2d_dict['game_of_life'])
+        self._create_new_universe(self.given_rule['game_of_life'])
 
     def replicator(self):
         """
@@ -41,7 +55,7 @@ class CellularAutomata:
 
         :return:
         """
-        self._create_new_universe(rules_2d_dict['replicator'])
+        self._create_new_universe(self.given_rule['replicator'])
 
     def seeds(self):
         """
@@ -53,7 +67,7 @@ class CellularAutomata:
 
         :return:
         """
-        self._create_new_universe(rules_2d_dict['seeds'])
+        self._create_new_universe(self.given_rule['seeds'])
 
     def life_without_death(self):
         """
@@ -65,7 +79,7 @@ class CellularAutomata:
 
         :return:
         """
-        self._create_new_universe(rules_2d_dict['life_without_death'])
+        self._create_new_universe(self.given_rule['life_without_death'])
 
     def life(self):
         """
@@ -75,7 +89,7 @@ class CellularAutomata:
 
         :return:
         """
-        self._create_new_universe(rules_2d_dict['life'])
+        self._create_new_universe(self.given_rule['life'])
 
     def life_34(self):
         """
@@ -87,7 +101,7 @@ class CellularAutomata:
 
         :return:
         """
-        self._create_new_universe(rules_2d_dict['life_34'])
+        self._create_new_universe(self.given_rule['life_34'])
 
     def diamoeba(self):
         """
@@ -97,7 +111,7 @@ class CellularAutomata:
         in 1993 offered a $50 prize to find a pattern that fills space with live cells; the prize was won in 1999 by David Bell
         :return:
         """
-        self._create_new_universe(rules_2d_dict['diamoeba'])
+        self._create_new_universe(self.given_rule['diamoeba'])
 
     def rule_2x2(self):
         """
@@ -109,7 +123,7 @@ class CellularAutomata:
 
         :return:
         """
-        self._create_new_universe(rules_2d_dict['rule_2x2'])
+        self._create_new_universe(self.given_rule['rule_2x2'])
 
     def highlife(self):
         """
@@ -119,7 +133,7 @@ class CellularAutomata:
 
         :return:
         """
-        self._create_new_universe(rules_2d_dict['highlife'])
+        self._create_new_universe(self.given_rule['highlife'])
 
     def day_and_night(self):
         """
@@ -129,7 +143,7 @@ class CellularAutomata:
 
         :return:
         """
-        self._create_new_universe(rules_2d_dict['day_and_night'])
+        self._create_new_universe(self.given_rule['day_and_night'])
 
     def morley(self):
         """
@@ -139,7 +153,7 @@ class CellularAutomata:
 
         :return:
         """
-        self._create_new_universe(rules_2d_dict['morley'])
+        self._create_new_universe(self.given_rule['morley'])
 
     def anneal(self):
         """
@@ -151,7 +165,7 @@ class CellularAutomata:
 
         :return:
         """
-        self._create_new_universe(rules_2d_dict['anneal'])
+        self._create_new_universe(self.given_rule['anneal'])
 
     def specify_rule_2d(self, rule):
         """

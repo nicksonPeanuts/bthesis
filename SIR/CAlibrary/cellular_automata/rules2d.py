@@ -1,4 +1,11 @@
 
+"""
+TODO:
+capire come gestire le regole 
+
+
+"""
+
 class Rules2d:
     def __init__(self,input_rule=''):
         self.input_rule = input_rule

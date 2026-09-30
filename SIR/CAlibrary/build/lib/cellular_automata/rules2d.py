@@ -1,4 +1,11 @@
 
+
+"""
+
+
+
+"""
+
 class Rules2d:
     def __init__(self,input_rule=''):
         self.input_rule = input_rule
@@ -107,6 +114,3 @@ class Rules2d:
             return [birth, alive, 'H']
         except Exception as e:
             raise Exception(e)
-
-
-
