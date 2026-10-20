@@ -220,14 +220,28 @@ class SIRS(object):
         self.image.set_array(self.lattice)
         return self.image,
 
-    def run_animation(self, sweeps, it_per_sweep):
+    def run_animation(self, sweeps, it_per_sweep, gif_path="sir.gif", fps=10):
         """
             Used in partnership with the tester file
-            to run the simulation.
+            to run the simulation and save the result as a GIF.
         """
         self.figure = plt.figure()
         self.it_per_sweep = it_per_sweep
         self.image = plt.imshow(self.lattice, cmap='jet', animated=True)
-        self.animation = animation.FuncAnimation(self.figure, self.animate, repeat=False, frames=sweeps, interval=50, blit=True)
+
+        self.animation = animation.FuncAnimation(
+            self.figure,
+            self.animate,
+            repeat=False,
+            frames=sweeps,
+            interval=50,
+            blit=True
+        )
+
         plt.colorbar(ticks=np.linspace(-1, 1, 3))
-        plt.show()
+
+        writer = animation.PillowWriter(fps=fps)
+        self.animation.save(gif_path, writer=writer)
+
+        plt.close(self.figure)
+        return self.animation
